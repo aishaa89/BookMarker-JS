@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarke</title>
+     <!-- google fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <!-- Css -->
+     <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="bookmark py-5">
+      <div class="container">
+        <div class="row">
+            <h1 class=" text-center w-25  mx-auto" >Bookmarker</h1>
+            <div class="bookcontent p-3 w-100 mt-5">
+                <h2 class="text-center head-site" >
+                    <i class="fa-solid fa-bookmark"></i>
+                    Bookmark your favorite sites
+                    <i class="fa-solid fa-bookmark"></i>
+                  </h2>  
+                  
+                  <div class="mt-5">
+                    <label for="siteName" class="pb-2 fw-bold"> 
+                    <i class="fa-solid fa-book-bookmark pe-2"></i> Site Name</label>
+                    <input type="text" oninput="validateName()" id="siteName" class="form-control border-1 rounded rounded-2" placeholder="Bookmark Name">
+                     <div id="message" class="alert text-danger d-none">* Site name must contain at least 3 characters and max 10 </div>
+                  </div>
+              
+                  <div class="mt-5">
+                    <label for="siteurl" class="pb-2 fw-bold"><i class="fa-solid fa-link pe-2"></i>Site Name</label>
+                    <input type="text" oninput="validateUrl()" id="siteurl" class="form-control border-1 rounded rounded-2" placeholder="Website URL">
+                    <div id="urlMessage" class="alert text-danger d-none">* Site URL must be valid like (https://www.sitename.com/)</div>
+
+                  </div>
+                 <div class="w-100 pb-2 mt-3 d-flex justify-content-center">
+                  <button class="btn submit px-5" id="submitbtn" onclick="addSite()">Submit</button>
+                </div>
+                 </div>
+                 <table class="table mt-4 text-center bg-light">
+                    <thead>
+                      <tr><th class="text-capitalize">index</th>
+                      <th class="text-capitalize">Website Name</th>
+                      <th class="text-capitalize">Visit</th>
+                      <th class="text-capitalize">Delete</th>
+                    </tr></thead>
+                    <tbody id="tableContent">
+                       
+                      </tbody>
+                  </table>
+        </div>
+      </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalError" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="staticBackdropLabel"><i class="fas fa-skull-crossbones fs-3"></i></h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <h6 class="text-danger"> Site Name or Url is not valid, Please follow the rules below :</h6>
+
+        <p><i class="fa-sharp fa-solid fa-arrow-right"></i>  Site name must contain at least 3 characters </p>
+       <p> <i class="fa-sharp fa-solid fa-arrow-right"></i>  Site URL must be a valid one</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
